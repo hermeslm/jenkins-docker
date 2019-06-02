@@ -12,3 +12,5 @@ RUN add-apt-repository \
 RUN apt-get update  -qq \
     && apt-get install docker-ce -y
 RUN usermod -aG docker jenkins
+#We add this if you need to run bower in the build process
+RUN echo '{ "allow_root": true }' > /root/.bowerrc
